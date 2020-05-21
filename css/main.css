@@ -47,3 +47,9 @@
     text-align: center; }
   .description p {
     text-align: center; }
+
+.answer {
+  display: inline-block; }
+
+.record {
+  display: none; }
