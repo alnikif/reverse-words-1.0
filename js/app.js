@@ -6,6 +6,7 @@ const btnNxt= document.querySelector('.nxt');
 const timer = document.querySelector('.timer');
 const answer = document.querySelector('.answer');
 const record = document.querySelector('.record');
+
 let count;
 let interval;
 const words={
@@ -26,6 +27,7 @@ const description = document.querySelector('.description');
 const btnColors = ['#DD4E42', '#FECE47', '#498AF4', '#169F5C', '#DD4E42', '#FECE47', '#498AF4', '#169F5C'];
 
 btnStart.addEventListener('click', function(e){
+ 
     timer.innerHTML='';
     answer.innerHTML ='';
     btnOk.style.display='block';
@@ -44,14 +46,13 @@ btnStart.addEventListener('click', function(e){
     ex.innerHTML= val;
     level.style.display='block'
     level.innerHTML=innerCount;
-
     interval= setInterval(()=>{
         count-=1
         count2 = count;
-        
         btnOk.innerHTML=count2;
         btnOk.style.backgroundColor=btnColors[count2];
         if(count<0){
+            description.style.display='block';
             timer.innerHTML=`Time is over :(`;
             ex.innerHTML='';
             btnStart.style.display='block';
@@ -59,9 +60,7 @@ btnStart.addEventListener('click', function(e){
             clearInterval(interval);
         }
     },1000)
-
 })
-
 btnOk.addEventListener('click', function(e){
     e.preventDefault();
     btnNxt.style.display='block';
@@ -90,6 +89,7 @@ btnOk.addEventListener('click', function(e){
         inpt.value='';
  
     }else{
+        description.style.display='block'
         btnNxt.style.display='none';
         btnStart.style.display='inline-block';
         inptValue = inpt.value.split('').reverse().join('');
@@ -98,14 +98,16 @@ btnOk.addEventListener('click', function(e){
         record.style.display='block';
         
         record.innerHTML=`Your record : ${countR}`
+
+        
+
         if(recordCount>countR){
             countR=recordCount;
             record.innerHTML=`Your record : Level ${countR}`
+           
 
         }
-    
 
-        
         clearInterval(interval);
     } 
 
@@ -140,8 +142,6 @@ btnNxt.addEventListener('click', function(e){
             btnOk.innerHTML=count;
             return count;
         })
-        //test
-    
     }
     if(innerCount >= 7){
         val= hard[Math.floor(Math.random()*hard.length)]
@@ -165,6 +165,7 @@ btnNxt.addEventListener('click', function(e){
         btnOk.style.backgroundColor=btnColors[count2];
         
         if(count<0){
+            description.style.display='block'
             ex.innerHTML='';
             btnNxt.style.display='none';
             btnStart.style.display='block';
@@ -178,6 +179,9 @@ btnNxt.addEventListener('click', function(e){
             countR=recordCount;
             record.innerHTML=`Your record : Level ${countR}`
 
+            
+            
+
         }
     
           
@@ -186,4 +190,5 @@ btnNxt.addEventListener('click', function(e){
     },1000)
 
 })
+
 

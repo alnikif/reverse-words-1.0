@@ -46,10 +46,14 @@
   .description h1 {
     text-align: center; }
   .description p {
-    text-align: center; }
+    text-align: center;
+    font-size: 1rem; }
 
 .answer {
   display: inline-block; }
 
 .record {
   display: none; }
+
+.bestResult {
+  display: block; }
