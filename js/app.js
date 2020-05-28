@@ -27,6 +27,7 @@ const description = document.querySelector('.description');
 const btnColors = ['#DD4E42', '#FECE47', '#498AF4', '#169F5C', '#DD4E42', '#FECE47', '#498AF4', '#169F5C'];
 
 btnStart.addEventListener('click', function(e){
+    inpt.focus();
  
     timer.innerHTML='';
     answer.innerHTML ='';
@@ -113,6 +114,7 @@ btnOk.addEventListener('click', function(e){
 
 })
 btnNxt.addEventListener('click', function(e){
+    inpt.focus();
     e.preventDefault();
     answer.innerHTML ='';
     timer.innerHTML='';
