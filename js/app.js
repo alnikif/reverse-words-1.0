@@ -10,11 +10,12 @@ const record = document.querySelector('.record');
 let count;
 let interval;
 const words={
-    easy :['left', 'hello', 'cool', 'moon', 'rain', 'green', 'good', 'frog', 'book', 'rain', 'rest', 'five', 'lime', 'hero', 'gold'],
-    medium:['rabbit', 'black', 'floor', 'tomato', 'plate', 'water', 'apple', 'music', 'tower', 'window', 'pear', 'alone'],
+    startingWords:['go', 'war', 'cow', 'sun', 'eye', 'toy', 'boy', 'dog', 'cat'],
+    easy :['left', 'hello', 'cool', 'moon', 'shop', 'rain', 'green', 'girl',  'good', 'frog', 'book', 'rain', 'rest', 'five', 'lime', 'hero', 'gold'],
+    medium:['rabbit', 'black', 'floor', 'tomato', 'plate', 'water', 'apple', 'horse', 'music', 'tower', 'window', 'pear', 'alone'],
     hard:['exelent', 'reverse', 'different', 'keyboard', 'conclusion', 'elephant', 'terminal', 'weather', 'yellow']
 };
-const {easy, medium, hard}=words;
+const {startingWords, easy, medium, hard}=words;
 let val;
 let level= document.querySelector('.level');
 let levelCount=1;
@@ -43,7 +44,7 @@ btnStart.addEventListener('click', function(e){
     btnStart.style.display='none'
     innerCount = `Level :1`;
     count=5;
-    val= 'go';
+    val= startingWords[Math.floor(Math.random()*hard.length)]
     ex.innerHTML= val;
     level.style.display='block'
     level.innerHTML=innerCount;
@@ -149,7 +150,7 @@ btnNxt.addEventListener('click', function(e){
         val= hard[Math.floor(Math.random()*hard.length)]
         ex.innerHTML= val;
         hard.forEach(el=>{
-            count= Math.floor(el.length + (el.length/2)-1);
+            count= Math.floor(el.length + (el.length/2)+2);
             btnOk.innerHTML=count;
             return count;
         })
