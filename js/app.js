@@ -43,7 +43,7 @@ btnStart.addEventListener('click', function(e){
     e.preventDefault();
     btnStart.style.display='none'
     innerCount = `Level :1`;
-    count=5;
+    count=4;
     val= startingWords[Math.floor(Math.random()*hard.length)]
     ex.innerHTML= val;
     level.style.display='block'
@@ -132,7 +132,7 @@ btnNxt.addEventListener('click', function(e){
         val= easy[Math.floor(Math.random()*easy.length)]
         ex.innerHTML= val;
         easy.forEach(el=>{
-            count= Math.floor(el.length + (el.length/2)) ;
+            count= Math.floor(el.length + (el.length/2)-1) ;
             btnOk.innerHTML=count;
             return count;
         })
@@ -141,7 +141,7 @@ btnNxt.addEventListener('click', function(e){
         val= medium[Math.floor(Math.random()*medium.length)]
         ex.innerHTML= val;
         medium.forEach(el=>{
-            count= Math.floor(el.length + (el.length/2));
+            count= Math.floor(el.length + (el.length/2)-1);
             btnOk.innerHTML=count;
             return count;
         })
@@ -150,7 +150,7 @@ btnNxt.addEventListener('click', function(e){
         val= hard[Math.floor(Math.random()*hard.length)]
         ex.innerHTML= val;
         hard.forEach(el=>{
-            count= Math.floor(el.length + (el.length/2)+2);
+            count= Math.floor(el.length + (el.length/2)+1);
             btnOk.innerHTML=count;
             return count;
         })
