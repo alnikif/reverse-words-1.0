@@ -195,3 +195,58 @@ btnNxt.addEventListener('click', function(e){
 })
 
 
+inpt.addEventListener("keyup", function(e) {
+    
+    if (event.keyCode === 13) {
+        e.preventDefault();
+        btnNxt.style.display='block';
+        btnOk.style.display='none';
+        level.style.display='none';
+        if(inpt.value.split('').reverse().join('')=== val){
+            inptValue = inpt.value.split('').join('');
+            
+            answer.innerHTML = `${inptValue}`;
+    
+            setTimeout(()=>{
+                timer.innerHTML=`Bull's eye!  Answer : `;
+                answer.innerHTML= `${inptValue.split('').reverse().join('')}`;
+              
+            },600)
+    
+            clearInterval(interval);
+            count =0;
+            ex.innerHTML='';
+            btnStart.style.display='none';
+            btnNxt.style.display='inline-block';
+            
+            innerCount = levelCount+=1;
+            level.innerHTML=`Level : ${innerCount}`;
+            recordCount=innerCount-1;
+            inpt.value='';
+     
+        }else{
+            description.style.display='block'
+            btnNxt.style.display='none';
+            btnStart.style.display='inline-block';
+            inptValue = inpt.value.split('').reverse().join('');
+            timer.innerHTML=`Game Over! Answer : ${inptValue}`
+            inpt.value='';
+            record.style.display='block';
+            
+            record.innerHTML=`Your record : ${countR}`
+    
+            
+    
+            if(recordCount>countR){
+                countR=recordCount;
+                record.innerHTML=`Your record : Level ${countR}`
+               
+    
+            }
+    
+            clearInterval(interval);
+        }
+
+
+    }
+    })
