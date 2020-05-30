@@ -12,7 +12,7 @@ let interval;
 const words={
     startingWords:['go', 'war', 'cow', 'sun', 'eye', 'toy', 'boy', 'dog', 'cat'],
     easy :['left', 'hello', 'cool', 'moon', 'shop', 'rain', 'green', 'girl',  'good', 'frog', 'book', 'rain', 'rest', 'five', 'lime', 'hero', 'gold'],
-    medium:['rabbit', 'black', 'floor', 'tomato', 'plate', 'water', 'apple', 'horse', 'music', 'tower', 'window', 'pear', 'alone'],
+    medium:['rabbit', 'black', 'floor', 'tomato', 'plate', 'water', 'apple', 'horse', 'music', 'tower', 'candy', 'under', 'sheep','window', 'pear', 'alone'],
     hard:['exelent', 'reverse', 'different', 'keyboard', 'conclusion', 'elephant', 'terminal', 'weather', 'yellow']
 };
 const {startingWords, easy, medium, hard}=words;
