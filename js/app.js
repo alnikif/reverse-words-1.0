@@ -70,7 +70,6 @@ btnOk.addEventListener('click', function(e){
     level.style.display='none';
     if(inpt.value.split('').reverse().join('')=== val){
         inptValue = inpt.value.split('').join('');
-        
         answer.innerHTML = `${inptValue}`;
 
         setTimeout(()=>{
@@ -78,13 +77,11 @@ btnOk.addEventListener('click', function(e){
             answer.innerHTML= `${inptValue.split('').reverse().join('')}`;
           
         },600)
-
         clearInterval(interval);
         count =0;
         ex.innerHTML='';
         btnStart.style.display='none';
         btnNxt.style.display='inline-block';
-        
         innerCount = levelCount+=1;
         level.innerHTML=`Level : ${innerCount}`;
         recordCount=innerCount-1;
@@ -99,17 +96,16 @@ btnOk.addEventListener('click', function(e){
         inpt.value='';
         record.style.display='block';
         
-        record.innerHTML=`Your record : ${countR}`
+        record.innerHTML=`Your record : ${countR}!`
 
         
 
         if(recordCount>countR){
             countR=recordCount;
-            record.innerHTML=`Your record : Level ${countR}`
+            record.innerHTML=`Your record : Level ${countR}!`
            
 
         }
-
         clearInterval(interval);
     } 
 
@@ -128,7 +124,7 @@ btnNxt.addEventListener('click', function(e){
     
     },1000)
 
-    if( innerCount < 4){
+    if( innerCount < 3){
         val= easy[Math.floor(Math.random()*easy.length)]
         ex.innerHTML= val;
         easy.forEach(el=>{
@@ -137,7 +133,7 @@ btnNxt.addEventListener('click', function(e){
             return count;
         })
     }
-     if(innerCount>3 && innerCount < 7){
+     if(innerCount>2 && innerCount < 6){
         val= medium[Math.floor(Math.random()*medium.length)]
         ex.innerHTML= val;
         medium.forEach(el=>{
