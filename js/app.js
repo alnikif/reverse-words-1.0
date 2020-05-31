@@ -142,7 +142,7 @@ btnNxt.addEventListener('click', function(e){
             return count;
         })
     }
-    if(innerCount >= 7){
+    if(innerCount >5){
         val= hard[Math.floor(Math.random()*hard.length)]
         ex.innerHTML= val;
         hard.forEach(el=>{
