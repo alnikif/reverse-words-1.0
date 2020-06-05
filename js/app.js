@@ -6,11 +6,12 @@ const btnNxt= document.querySelector('.nxt');
 const timer = document.querySelector('.timer');
 const answer = document.querySelector('.answer');
 const record = document.querySelector('.record');
-
+const phrases=["Bull's eye!", "Great!", "Excellent!", "Nice!"];
+const phrase=phrases[Math.floor(Math.random()*phrases.length)];
 let count;
 let interval;
 const words={
-    startingWords:['go', 'war', 'cow', 'sun', 'eye', 'toy', 'boy', 'dog', 'cat'],
+    startingWords:['go', 'war', 'cow', 'sun', 'eye', 'toy', 'boy', 'dog', 'cat', 'one'],
     easy :['left', 'hello', 'cool', 'moon', 'shop', 'rain', 'green', 'girl',  'good', 'frog', 'book', 'rain', 'rest', 'five', 'lime', 'hero', 'gold'],
     medium:['rabbit', 'black', 'floor', 'tomato', 'plate', 'water', 'apple', 'horse', 'music', 'tower', 'candy', 'under', 'sheep','window', 'pear', 'alone'],
     hard:['exelent', 'reverse', 'different', 'keyboard', 'conclusion', 'elephant', 'terminal', 'weather', 'yellow']
@@ -71,9 +72,11 @@ btnOk.addEventListener('click', function(e){
     if(inpt.value.split('').reverse().join('')=== val){
         inptValue = inpt.value.split('').join('');
         answer.innerHTML = `${inptValue}`;
+        
 
         setTimeout(()=>{
-            timer.innerHTML=`Bull's eye!  Answer : `;
+            
+            timer.innerHTML=`${phrase} Answer : `;
             answer.innerHTML= `${inptValue.split('').reverse().join('')}`;
           
         },600)
@@ -108,6 +111,7 @@ btnOk.addEventListener('click', function(e){
         }
         clearInterval(interval);
     } 
+
 
 })
 btnNxt.addEventListener('click', function(e){
@@ -204,7 +208,7 @@ inpt.addEventListener("keyup", function(e) {
             answer.innerHTML = `${inptValue}`;
     
             setTimeout(()=>{
-                timer.innerHTML=`Bull's eye!  Answer : `;
+                timer.innerHTML=`${phrase}  Answer : `;
                 answer.innerHTML= `${inptValue.split('').reverse().join('')}`;
               
             },600)
