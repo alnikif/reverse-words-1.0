@@ -6,7 +6,7 @@ const btnNxt= document.querySelector('.nxt');
 const timer = document.querySelector('.timer');
 const answer = document.querySelector('.answer');
 const record = document.querySelector('.record');
-const phrases=["Bull's eye!", "Great!", "Excellent!", "Nice!"];
+const phrases=["Bull's eye!", "Awesome!",, "Fantastic!", "Great!", "Excellent!"];
 const phrase=phrases[Math.floor(Math.random()*phrases.length)];
 let count;
 let interval;
