@@ -7,7 +7,7 @@ const timer = document.querySelector('.timer');
 const answer = document.querySelector('.answer');
 const record = document.querySelector('.record');
 const phrases=["Bull's eye!", "Awesome!",, "Fantastic!", "Great!", "Excellent!"];
-const phrase=phrases[Math.floor(Math.random()*phrases.length)];
+let phrase;
 let count;
 let interval;
 const words={
@@ -66,6 +66,7 @@ btnStart.addEventListener('click', function(e){
 })
 btnOk.addEventListener('click', function(e){
     e.preventDefault();
+    phrase=phrases[Math.floor(Math.random()*phrases.length)];
     btnNxt.style.display='block';
     this.style.display='none';
     level.style.display='none';
@@ -199,6 +200,7 @@ inpt.addEventListener("keyup", function(e) {
     
     if (event.keyCode === 13) {
         e.preventDefault();
+        phrase=phrases[Math.floor(Math.random()*phrases.length)];
         btnNxt.style.display='block';
         btnOk.style.display='none';
         level.style.display='none';
